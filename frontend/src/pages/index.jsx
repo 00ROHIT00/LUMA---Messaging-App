@@ -4,6 +4,7 @@ import BlurText from "../components/TextAnimations/BlurText/BlurText.jsx";
 import Aurora from "../components/Backgrounds/Aurora/Aurora.jsx";
 import Waves from "../components/Backgrounds/Waves/Waves.jsx";
 import Navbar from "../components/Navbar/Navbar.jsx";
+import { Camera } from 'lucide-react';
 
 const handleAnimationComplete = () => {
   console.log("Animation completed!");
@@ -75,3 +76,5 @@ function Home() {
 }
 
 export default Home;
+
+

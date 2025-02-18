@@ -1,6 +1,8 @@
 import "../Navbar/Navbar.css";
 import React from "react";
 import { motion } from "framer-motion";
+import { House, LogIn, CircleHelp, UserPlus } from "lucide-react";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 function Navbar() {
   return (
@@ -17,56 +19,127 @@ function Navbar() {
           LUMA
         </motion.a>
       </div>
-     
+
       {/* Middle part - intentionally left empty */}
       <div className="flex-grow"></div>
-     
+
       {/* Right side - Navigation links */}
       <div className="flex-none">
         <ul className="flex space-x-6 list-none p-0 m-0">
+          {/* Home */}
           <li>
-            <motion.a
-              href="/"
-              className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
-              whileHover={{ scale: 0.9 }}
-              whileTap={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              HOME
-            </motion.a>
+            <Tooltip.Provider delayDuration={200}>
+              <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                  <motion.a
+                    href="/"
+                    className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
+                    whileHover={{ scale: 0.9 }}
+                    whileTap={{ scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <House size={20} />
+                  </motion.a>
+                </Tooltip.Trigger>
+                <Tooltip.Portal>
+                  <Tooltip.Content
+                    className="bg-gray-800 text-white px-3 py-1 rounded-md text-sm shadow-lg"
+                    side="bottom"
+                    align="center"
+                  >
+                    Home
+                    <Tooltip.Arrow className="fill-gray-800" />
+                  </Tooltip.Content>
+                </Tooltip.Portal>
+              </Tooltip.Root>
+            </Tooltip.Provider>
           </li>
+
+          {/* About Us */}
           <li>
-            <motion.a
-              href="/about"
-              className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
-              whileHover={{ scale: 0.9 }}
-              whileTap={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              ABOUT
-            </motion.a>
+            <Tooltip.Provider delayDuration={200}>
+              <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                  <motion.a
+                    href="/about"
+                    className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
+                    whileHover={{ scale: 0.9 }}
+                    whileTap={{ scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <CircleHelp size={20} />
+                  </motion.a>
+                </Tooltip.Trigger>
+                <Tooltip.Portal>
+                  <Tooltip.Content
+                    className="bg-gray-800 text-white px-3 py-1 rounded-md text-sm shadow-lg"
+                    side="bottom"
+                    align="center"
+                  >
+                    About Us
+                    <Tooltip.Arrow className="fill-gray-800" />
+                  </Tooltip.Content>
+                </Tooltip.Portal>
+              </Tooltip.Root>
+            </Tooltip.Provider>
           </li>
+
+          {/* Sign In */}
           <li>
-            <motion.a
-              href="/signin"
-              className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
-              whileHover={{ scale: 0.9 }}
-              whileTap={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              SIGN IN
-            </motion.a>
+            <Tooltip.Provider delayDuration={200}>
+              <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                  <motion.a
+                    href="/signin"
+                    className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
+                    whileHover={{ scale: 0.9 }}
+                    whileTap={{ scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <LogIn size={20} />
+                  </motion.a>
+                </Tooltip.Trigger>
+                <Tooltip.Portal>
+                  <Tooltip.Content
+                    className="bg-gray-800 text-white px-3 py-1 rounded-md text-sm shadow-lg"
+                    side="bottom"
+                    align="center"
+                  >
+                    Sign In
+                    <Tooltip.Arrow className="fill-gray-800" />
+                  </Tooltip.Content>
+                </Tooltip.Portal>
+              </Tooltip.Root>
+            </Tooltip.Provider>
           </li>
+
+          {/* Register */}
           <li>
-            <motion.a
-              href="/signup"
-              className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
-              whileHover={{ scale: 0.9 }}
-              whileTap={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              SIGN UP
-            </motion.a>
+            <Tooltip.Provider delayDuration={200}>
+              <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                  <motion.a
+                    href="/signup"
+                    className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
+                    whileHover={{ scale: 0.9 }}
+                    whileTap={{ scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <UserPlus size={20} />
+                  </motion.a>
+                </Tooltip.Trigger>
+                <Tooltip.Portal>
+                  <Tooltip.Content
+                    className="bg-gray-800 text-white px-3 py-1 rounded-md text-sm shadow-lg"
+                    side="bottom"
+                    align="center"
+                  >
+                    Register
+                    <Tooltip.Arrow className="fill-gray-800" />
+                  </Tooltip.Content>
+                </Tooltip.Portal>
+              </Tooltip.Root>
+            </Tooltip.Provider>
           </li>
         </ul>
       </div>
