@@ -1,10 +1,9 @@
 import "../styles/index.css";
 import { motion } from "framer-motion";
 import BlurText from "../components/TextAnimations/BlurText/BlurText.jsx";
-import Aurora from "../components/Backgrounds/Aurora/Aurora.jsx";
 import Waves from "../components/Backgrounds/Waves/Waves.jsx";
 import Navbar from "../components/Navbar/Navbar.jsx";
-import { Camera } from 'lucide-react';
+import RotatingText from "../components/TextAnimations/RotatingText/RotatingText.jsx";
 
 const handleAnimationComplete = () => {
   console.log("Animation completed!");
@@ -13,13 +12,7 @@ const handleAnimationComplete = () => {
 function Home() {
   return (
     <div className="relative w-screen h-screen flex flex-col justify-center items-center overflow-hidden">
-
       <Navbar />
-      {/* Aurora Background */}
-      {/* <div className="absolute inset-0 z-[-1]">
-        <Aurora colorStops={["#3A29FF", "#FF94B4", "#FF3232"]} speed={0.5} />
-      </div> */}
-
       {/* Waves Background */}
       <div className="absolute inset-0 z-[-1]">
         <Waves
@@ -49,9 +42,37 @@ function Home() {
           className="text-8xl text-white select-none font-extrabold"
         />
 
+        {/* Separate BlurText for "Messaging App!" */}
+        <div className="flex items-center gap-2 text-2xl sm:text-xl md:text-2xl text-white font-semibold">
+          <BlurText
+            text="A"
+            delay={200}
+            animateBy="words"
+            direction="bottom"
+            className="select-none text-[15px]"
+          />
+
+          <div className="rotating-text-container">
+            <RotatingText
+              texts={["Private", "Secure", "Fast"]}
+              mainClassName="overflow-hidden justify-center rounded-lg bg-transparent text-black decoration-dotted text-[15px] select-none"
+              staggerFrom={"last"}
+              rotationInterval={2000}
+            />
+          </div>
+
+          <BlurText
+            text="Messaging App"
+            delay={200}
+            animateBy="words"
+            direction="bottom"
+            className="text-[15px] select-none"
+          />
+        </div>
+
         {/* Motion button with border only on hover */}
         <motion.button
-          className="px-6 py-3 bg-transparent border-0 rounded-md font-bold text-white hover:border-2 hover:border-white focus:bg-transparent active:bg-transparent"
+          className="px-3 py-3 bg-transparent border-0 rounded-md font-bold text-white hover:border-2 hover:border-white focus:bg-white active:bg-white"
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.2 },
@@ -67,7 +88,7 @@ function Home() {
             delay={350}
             animateBy="words"
             direction="bottom"
-            className="block font-bold buttonClass"
+            className="block font-bold"
           />
         </motion.button>
       </div>
@@ -76,5 +97,3 @@ function Home() {
 }
 
 export default Home;
-
-
