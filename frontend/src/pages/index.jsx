@@ -48,7 +48,7 @@ function Home() {
             delay={200}
             animateBy="words"
             direction="bottom"
-            className="select-none text-[15px]"
+            className="text-[15px] select-none pt-[15px]"
           />
 
           <div className="rotating-text-container">
@@ -65,7 +65,7 @@ function Home() {
             delay={200}
             animateBy="words"
             direction="bottom"
-            className="text-[15px] select-none"
+            className="text-[15px] select-none pt-[15px]"
           />
         </div>
 

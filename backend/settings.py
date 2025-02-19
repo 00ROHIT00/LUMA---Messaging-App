@@ -85,21 +85,15 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'luma_db',   # Your database name
+        'USER': 'postgres',   # Your PostgreSQL username
+        'PASSWORD': 'rohith053',  # Your PostgreSQL password
+        'HOST': 'localhost',  # Keep as 'localhost' if running locally
+        'PORT': '5432',       # Default PostgreSQL port
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'luma_db',  # Change this to your database name
-#         'USER': 'your_username',  # Your PostgreSQL username
-#         'PASSWORD': 'your_password',  # Your PostgreSQL password
-#         'HOST': 'localhost',  # If running locally
-#         'PORT': '5432',  # Default PostgreSQL port
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
