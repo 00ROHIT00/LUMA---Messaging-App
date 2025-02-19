@@ -1,3 +1,4 @@
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "../Navbar/Navbar.css";
 import React from "react";
 import { motion } from "framer-motion";
@@ -119,7 +120,7 @@ function Navbar() {
               <Tooltip.Root>
                 <Tooltip.Trigger asChild>
                   <motion.a
-                    href="/login"
+                    href="/register?"
                     className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
                     whileHover={{ scale: 0.9 }}
                     whileTap={{ scale: 1.1 }}
