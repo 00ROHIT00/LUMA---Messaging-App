@@ -1,13 +1,11 @@
 @import '@fontsource/poppins';
-
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 0.87) !;
   background-color: #242424;
 
   font-synthesis: none;
@@ -68,4 +66,20 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+.GetStarted{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* Ensure MDB styles don’t override global styles */
+.login-container {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+  color: rgba(255, 255, 255, 0.87) !important;
 }

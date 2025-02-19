@@ -42,7 +42,6 @@ function Home() {
           className="text-8xl text-white select-none font-extrabold"
         />
 
-        {/* Separate BlurText for "Messaging App!" */}
         <div className="flex items-center gap-2 text-2xl sm:text-xl md:text-2xl text-white font-semibold">
           <BlurText
             text="A"
@@ -70,7 +69,6 @@ function Home() {
           />
         </div>
 
-        {/* Motion button with border only on hover */}
         <motion.button
           className="px-3 py-3 bg-transparent border-0 rounded-md font-bold text-white hover:border-2 hover:border-white focus:bg-white active:bg-white"
           whileHover={{
@@ -88,7 +86,7 @@ function Home() {
             delay={350}
             animateBy="words"
             direction="bottom"
-            className="block font-bold"
+            className="block font-bold GetStarted"
           />
         </motion.button>
       </div>

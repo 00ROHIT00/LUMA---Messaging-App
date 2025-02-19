@@ -119,7 +119,7 @@ function Navbar() {
               <Tooltip.Root>
                 <Tooltip.Trigger asChild>
                   <motion.a
-                    href="/signup"
+                    href="/login"
                     className="text-xs text-white no-underline hover:opacity-80 transition-opacity"
                     whileHover={{ scale: 0.9 }}
                     whileTap={{ scale: 1.1 }}
