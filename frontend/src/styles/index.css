@@ -25,7 +25,7 @@
 
 .rotating-text-container {
   opacity: 0;
-  /*Starthidden*/animation: blurFadeInFromBottom 0.8s ease-out forwards;
+  /*Starthidden*/ animation: blurFadeInFromBottom 1.3s ease-out forwards;
   background-color: rgb(255, 255, 255, 0.5);
   padding: 3px;
   border-radius: 5px ;
