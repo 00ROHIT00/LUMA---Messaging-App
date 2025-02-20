@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'luma_db',   # Your database name
         'USER': 'postgres',   # Your PostgreSQL username
-        'PASSWORD': 'rohith053',  # Your PostgreSQL password
+        'PASSWORD': 'password',  # Your PostgreSQL password
         'HOST': 'localhost',  # Keep as 'localhost' if running locally
         'PORT': '5432',       # Default PostgreSQL port
     }
