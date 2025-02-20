@@ -79,3 +79,28 @@ body{
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+.luma{
+  font-weight: 1000;
+}
+
+
+.link{
+  text-decoration: underline;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  text-underline-offset: 3px;
+}
+
+.link:hover{
+  color: black !important;
+  text-underline-offset: 6px;
+  transform: scale(1.01);
+  -webkit-transform: scale(1.01);
+  -moz-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  -o-transform: scale(1.01);
+}

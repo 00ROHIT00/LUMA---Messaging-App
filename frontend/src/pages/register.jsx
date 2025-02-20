@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import axios from "axios"; // Import Axios
+import axios from "axios";
 import "../styles/register.css";
 import Navbar from "../components/Navbar/Navbar.jsx";
 import BlurText from "../components/TextAnimations/BlurText/BlurText.jsx";
@@ -98,7 +98,7 @@ function App() {
                 border: "3px solid rgb(58, 58, 58)",
               }}
             >
-              <h1 className="text-8xl text-black select-none text-center w-100 font-extrabold">
+              <h1 className="text-8xl text-black select-none text-center w-100 font-extrabold luma">
                 LUMA
               </h1>
 
@@ -170,6 +170,11 @@ function App() {
                 >
                   Sign Up
                 </motion.button>
+                <div className="text-center w-100 link"> 
+                  <a href="" className="">
+                    Already Have An Account?
+                  </a>
+                </div>
               </form>
             </MDBCardBody>
           </MDBCard>
@@ -179,22 +184,32 @@ function App() {
       {/* Radix Alert Dialog */}
       <AlertDialog.Root open={alertOpen} onOpenChange={setAlertOpen}>
         <AlertDialog.Portal>
-          <AlertDialog.Overlay className="fixed inset-0 bg-black opacity-50" />
-          <AlertDialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg max-w-sm">
-            <AlertDialog.Title className={`text-lg font-bold ${alertType === "error" ? "text-red-500" : "text-green-500"}`}>
-              {alertType === "error" ? "Error" : "Success"}
-            </AlertDialog.Title>
-            <AlertDialog.Description className="mt-2 text-black">
-              {alertMessage}
-            </AlertDialog.Description>
-            <div className="mt-4 flex justify-end">
-              <AlertDialog.Action asChild>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded">
+          {/* ✅ Fix: Make overlay non-blocking */}
+          <AlertDialog.Overlay className="fixed inset-0 bg-black opacity-50 pointer-events-none" />
+
+          {/* ✅ Ensure content is still interactive */}
+          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
+            <AlertDialog.Content className="bg-white p-6 rounded-lg shadow-lg max-w-sm">
+              <AlertDialog.Title
+                className={`text-lg text-center font-bold ${
+                  alertType === "error" ? "text-red-500" : "text-green-500"
+                }`}
+              >
+                {alertType === "error" ? "Error" : "Success"}
+              </AlertDialog.Title>
+              <AlertDialog.Description className="mt-2 text-black">
+                {alertMessage}
+              </AlertDialog.Description>
+              <div className="mt-4 flex justify-end">
+                <button
+                  onClick={() => setAlertOpen(false)} // ✅ Fix: Close Dialog on Click
+                  className="w-100 bg-blue-500 text-white px-4 py-2 rounded"
+                >
                   OK
                 </button>
-              </AlertDialog.Action>
-            </div>
-          </AlertDialog.Content>
+              </div>
+            </AlertDialog.Content>
+          </div>
         </AlertDialog.Portal>
       </AlertDialog.Root>
     </MDBContainer>
