@@ -120,7 +120,7 @@ function SignIn() {
                 </div>
 
                 <div className="text-center w-100 link">
-                  <a href="" className="">
+                  <a href="/register" className="">
                     Don't Have An Account?
                   </a>
                 </div>

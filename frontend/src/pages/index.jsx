@@ -4,12 +4,17 @@ import BlurText from "../components/TextAnimations/BlurText/BlurText.jsx";
 import Waves from "../components/Backgrounds/Waves/Waves.jsx";
 import Navbar from "../components/Navbar/Navbar.jsx";
 import RotatingText from "../components/TextAnimations/RotatingText/RotatingText.jsx";
+import { useNavigate } from "react-router-dom";
+
 
 const handleAnimationComplete = () => {
   console.log("Animation completed!");
 };
 
 function Home() {
+  const navigate = useNavigate();
+
+
   return (
     <div className="relative w-screen h-screen flex flex-col justify-center items-center overflow-hidden">
       <Navbar />
@@ -80,6 +85,7 @@ function Home() {
             transition: { duration: 0.2 },
           }}
           style={{ backgroundColor: "transparent" }}
+          onClick={() => navigate("/signin")}
         >
           <BlurText
             text="Get Started!"

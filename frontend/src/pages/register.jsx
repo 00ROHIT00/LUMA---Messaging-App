@@ -183,7 +183,7 @@ function App() {
                   Sign Up
                 </motion.button>
                 <div className="text-center w-100 link">
-                  <a href="" className="">
+                  <a href="/signin" className="">
                     Already Have An Account?
                   </a>
                 </div>
