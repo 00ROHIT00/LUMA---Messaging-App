@@ -74,3 +74,9 @@ body{
   -o-border-radius: 7px;
   color : black;
 }
+
+
+body{
+  font-family: "Poppins", serif;
+  background : transparent !important;
+}

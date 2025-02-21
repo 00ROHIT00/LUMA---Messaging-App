@@ -56,17 +56,13 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = True  # Allow all frontend origins (for development)
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Your React frontend URL
-]
-
 ROOT_URLCONF = 'backend.urls'
 
 import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend', 'dist')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,6 +76,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
+
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
+
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False 
 
 
 # Database
@@ -95,6 +97,15 @@ DATABASES = {
         'PORT': '5432',       # Default PostgreSQL port
     }
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",  # Allow CSRF requests from frontend
+]
+
+CORS_ALLOW_CREDENTIALS = True  # Allow cookies from frontend
+SESSION_COOKIE_SECURE = False  # Change to True in production (for HTTPS)
+CSRF_COOKIE_SECURE = False  # Change to True in production (for HTTPS)
+
 
 
 # Password validation

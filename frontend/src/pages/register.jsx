@@ -18,6 +18,7 @@ function App() {
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -45,6 +46,7 @@ function App() {
       const response = await axios.post("http://127.0.0.1:8000/register/", {
         first_name: formData.first_name,
         last_name: formData.last_name,
+        username: formData.username, // Include username
         email: formData.email,
         password: formData.password,
       });
@@ -142,6 +144,16 @@ function App() {
                   onChange={handleChange}
                   required
                 />
+
+                <MDBInput
+                  wrapperClass="mb-4"
+                  label="Username"
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  required
+                />
                 <MDBInput
                   wrapperClass="mb-4"
                   label="Password"
@@ -170,7 +182,7 @@ function App() {
                 >
                   Sign Up
                 </motion.button>
-                <div className="text-center w-100 link"> 
+                <div className="text-center w-100 link">
                   <a href="" className="">
                     Already Have An Account?
                   </a>
@@ -184,8 +196,8 @@ function App() {
       {/* Radix Alert Dialog */}
       <AlertDialog.Root open={alertOpen} onOpenChange={setAlertOpen}>
         <AlertDialog.Portal>
-          {/* ✅ Fix: Make overlay non-blocking */}
-          <AlertDialog.Overlay className="fixed inset-0 bg-black opacity-50 pointer-events-none" />
+          {/* problem here */}
+          <AlertDialog.Overlay className="fixed inset-0 bg-black opacity-50 pointer-events-none" /> 
 
           {/* ✅ Ensure content is still interactive */}
           <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
